@@ -25,14 +25,6 @@ $ keytool -list -v -keystore ./ifdebug.keystore -storepass xxx
 $ keytool -list -v -keystore ./ifdebug.keystore -storepass xxx | grep "MD5" | tr '[:upper:]' '[:lower:]' |tr -d :
 ```
 
-### shell 中 字符串tr处理使用
-
-规则|示例
-:--:|:--:
-大写转小写|`tr '[:upper:]' '[:lower:]'` OR `tr '[A-Z]' '[a-z]'`
-删除字符|`tr -d x`  x:要删除的字符
-字符替换|`tr A B`  把A替换成B
-
 ### logcat 使用
 
 ```bash
