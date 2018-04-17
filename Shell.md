@@ -37,3 +37,20 @@ $ echo "nameXnameXnameXname" | xargs -dX -n2
 $ echo "abXbcXdeX" |cut -d "X" -f 2
 --> bc
 ```
+### `tee` 指令会从标准输入设备读取数据，将其内容输出到标准输出设备，同时保存成文件
+```bash
+$ echo "hello" |tee backup.txt
+```
+
+### js 文件压缩、混淆
+```sh
+$ npm install uglify-js -g 
+# 全局安装uglify-js
+$ uglifyjs input.js -c -m -o out-min.js
+# input.js :要压缩的js文件
+# out-min.js :压缩后的文件路径
+# -c :压缩 ; -m :单字母混淆; -o :输出
+
+$ uglifyjs out-min.js -b -o abc.js
+# -b :格式化js
+```
