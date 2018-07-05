@@ -54,3 +54,11 @@ $ uglifyjs input.js -c -m -o out-min.js
 $ uglifyjs out-min.js -b -o abc.js
 # -b :格式化js
 ```
+
+### 在流输出情况下，grep,tee等指令的串联使用
+```sh
+# --line-buffered:流输出的情况下，必须指定buffer大小为行大小
+# -E :是正则支持
+# 后面追加 |grep -E "Networks|Disks"是想要输出在终端的内容，有高亮显示
+$ top |grep --line-buffered -E "Networks|Disks" |tee Desktop/log.txt |grep --line-buffered -E "Networks|Disks"
+```
