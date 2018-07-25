@@ -16,3 +16,8 @@ args:
 eg:
 adb shell am broadcast -a actionStr --es test_key "this is test string" --ei test_int 100 --ez test_boolean true
 ```
+
+### 进入调试模式
+```sh
+$ adb -d shell am start -D -n "package/package.LaunchActivity"
+```
