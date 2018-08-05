@@ -86,3 +86,12 @@ Usage: top [ -m max_procs ] [ -n iterations ] [ -d delay ] [ -s sort_column ] [ 
 eg:查看com.tencent相关的进程线程的实时cpu占用
 $ top -n 3 -s cpu -t |grep "com.tencent"
 ```
+
+### 查看某个进程mmap情况
+```sh
+# pid 需要替换成当前进程号
+$ adb shell cat /proc/pid/maps
+# 如果有权限问题，可以以run-as用户执行
+$ adb shell run-as packageName
+$ cat /proc/pid/maps
+```

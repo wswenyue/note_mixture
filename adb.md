@@ -19,5 +19,5 @@ adb shell am broadcast -a actionStr --es test_key "this is test string" --ei tes
 
 ### 进入调试模式
 ```sh
-$ adb -d shell am start -D -n "package/package.LaunchActivity"
+$ adb shell am start -D -n "package/package.LaunchActivity"
 ```

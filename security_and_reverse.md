@@ -29,3 +29,9 @@ binutils是一套安全与逆向使用的工具包
 # install binutils
 $ brew install binutils
 ```
+
+使用:
+```sh
+# 查看依赖。NEEDED标志的就是依赖项
+$ readelf -d xxx.so 
+```
