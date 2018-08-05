@@ -73,6 +73,7 @@ $ objdump -S -D so_path
 使用方式
 ```sh
 # 通过logcat直接输出
+# so_path :是包含so的文件夹,例如$PROJECT_PATH/obj/local/armeabi 
 $ adb logcat | ndk-stack -sym so_path
 # 如果有log可以直接这样使用
 $ ndk-stack -sym so_path -dump crash.log
@@ -80,4 +81,5 @@ $ ndk-stack -sym so_path -dump crash.log
 
 # 参考文章
 
+[Android ndk-stack 使用](https://developer.android.com/ndk/guides/ndk-stack)
 [Android NDK开发Crash错误定位](https://www.kancloud.cn/xyang0917/blogjnindk/117018)
