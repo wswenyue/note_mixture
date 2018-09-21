@@ -95,3 +95,49 @@ $ adb shell cat /proc/pid/maps
 $ adb shell run-as packageName
 $ cat /proc/pid/maps
 ```
+
+### 查看某进程的status文件
+```sh
+# 如果有权限问题。可以使用run-as用户执行
+# pid 替换成对应进程的id
+$ cat /proc/pid/status
+# 例如下面是微信进程的status信息
+Name:	com.tencent.mm
+State:	S (sleeping)
+Tgid:	25713
+Pid:	25713
+PPid:	502
+TracerPid:	0
+Uid:	10083	10083	10083	10083
+Gid:	10083	10083	10083	10083
+FDSize:	512
+Groups:	1015 1028 3001 3002 3003 9997 50083
+VmPeak:	 2340232 kB
+VmSize:	 2319324 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	  250884 kB
+VmRSS:	  244704 kB
+VmData:	  521528 kB
+VmStk:	    8192 kB
+VmExe:	      12 kB
+VmLib:	  259588 kB
+VmPTE:	    1608 kB
+VmSwap:	       0 kB
+Threads:	179
+SigQ:	0/13835
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000001204
+SigIgn:	0000000000001000
+SigCgt:	00000002000084f8
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	0000000000000000
+Cpus_allowed:	ff
+Cpus_allowed_list:	0-7
+voluntary_ctxt_switches:	5277
+nonvoluntary_ctxt_switches:	882
+
+```
