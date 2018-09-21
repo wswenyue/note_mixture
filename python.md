@@ -26,3 +26,12 @@ $ source venv/bin/activate
 # 退出 激活的环境
 $ deactivate
 ```
+### python 安装模块
+Python的包管理器是pip所以安装包就通过pip安装
+
+```sh
+# eg 安装包abc
+$ pip install abc
+# 指定版本号，安装特定版本的包
+$ pip install abc==1.2.0
+```
