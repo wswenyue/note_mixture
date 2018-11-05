@@ -35,12 +35,17 @@ $ ssh-keygen -t rsa -C "xxx@email.com" -f keyFileName
 # -f keyFileName ：指定生成秘钥的文件名称
 ```
 
-### 向 homebrew 贡献 Formula
-```sh
-# 1. 创建Formula 
-$ brew create http://luarocks.org/releases/luarocks-2.3.0.tar.gz
-```
+
 ### clone 指定层级深度 ，指定分支到本地
 ```sh
 git clone --depth 1 <remote-addr:repo.git> -b <branch-or-tag>
+```
+
+### 命令行下载工具
+
+**axel**
+
+```sh
+#简单下载
+$ axel download_url
 ```
