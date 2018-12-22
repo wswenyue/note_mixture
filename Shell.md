@@ -62,3 +62,9 @@ $ uglifyjs out-min.js -b -o abc.js
 # 后面追加 |grep -E "Networks|Disks"是想要输出在终端的内容，有高亮显示
 $ top |grep --line-buffered -E "Networks|Disks" |tee Desktop/log.txt |grep --line-buffered -E "Networks|Disks"
 ```
+
+### grep
+```sh
+# 遍历搜索当前文件夹下面所有文件中包含text的行 -r：遍历所有子文件夹
+$ grep -r text ./
+```

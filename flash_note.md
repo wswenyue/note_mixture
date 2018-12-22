@@ -49,3 +49,9 @@ git clone --depth 1 <remote-addr:repo.git> -b <branch-or-tag>
 #简单下载
 $ axel download_url
 ```
+
+### pdf转png
+```sh
+# Mac 上提供的图片处理套件sips，功能很强大
+$ sips -s format png your_pdf_file.pdf --out your_png_file.png
+```

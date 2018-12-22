@@ -36,3 +36,36 @@ $ gradle -q bangjob:properties
 $ gradle clean assembleDebug -Dhttp.proxyHost=127.0.0.1 -Dhttp.proxyPort=1087 -Dhttps.proxyHost=127.0.0.1 -Dhttps.proxyPort=1087 --info
 
 ```
+
+## 执行脚本
+```java
+//函数如不需要返回值，把return相关去掉就行。另外如不设置standardOutput，默认就是控制台，屏幕输出，这样可以实时输出。
+def sayHello = { ->
+    def ret1 = new ByteArrayOutputStream()
+    exec {
+        commandLine "echo", "Hello"
+        standardOutput = ret1
+
+    }
+
+    def ret2 = new ByteArrayOutputStream()
+    exec {
+        commandLine 'echo', "ABC"
+        standardOutput = ret2
+    }
+    return ret2.toString().trim() + '-' + ret1.toString().trim()
+}
+
+def sayHi() {
+    return "echo Hi,body".execute().text.trim()
+}
+
+task printSay {
+    group 'demo'
+    doLast {
+        println "------>" + sayHello()
+        println "------>" + sayHi()
+    }
+}
+
+```
