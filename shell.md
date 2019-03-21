@@ -68,3 +68,13 @@ $ top |grep --line-buffered -E "Networks|Disks" |tee Desktop/log.txt |grep --lin
 # 遍历搜索当前文件夹下面所有文件中包含text的行 -r：遍历所有子文件夹
 $ grep -r text ./
 ```
+
+### diff 指令使用
+```sh
+# 以并列的方式显示文件的异同之处
+$ diff -y dir1 dir2
+# 以并列的方式显示两个内容的异同之处；右边部分只显示不一样的
+$ diff -y --left-column  <(ls dir1) <(ls dir2)
+# 以并列的方式显示两个内容的异同之处；只显示不一样的部分
+$ diff -y --suppress-common-lines <(ls dir1) <(ls dir2)
+```

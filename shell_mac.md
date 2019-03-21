@@ -31,3 +31,12 @@ Using:
 -R<x,y,w,h> 抓取指定区域的截图
 -B<bundleid> 截图输出会被bundleid指出的程序打开
 ```
+
+# 设置软件安装"允许任何来源" 既关闭`Gatekeeper`
+```sh
+# 显示"允许任何来源"
+$ sudo spctl --master-disable
+
+# 不显示"允许任何来源"
+$ sudo spctl --master-enable
+```
