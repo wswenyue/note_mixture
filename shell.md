@@ -78,3 +78,8 @@ $ diff -y --left-column  <(ls dir1) <(ls dir2)
 # 以并列的方式显示两个内容的异同之处；只显示不一样的部分
 $ diff -y --suppress-common-lines <(ls dir1) <(ls dir2)
 ```
+### 格式转换
+```sh
+# 将pdf转成png格式
+$ sips -s format png a.pdf --out img.png
+```
