@@ -77,6 +77,8 @@ $ diff -y dir1 dir2
 $ diff -y --left-column  <(ls dir1) <(ls dir2)
 # 以并列的方式显示两个内容的异同之处；只显示不一样的部分
 $ diff -y --suppress-common-lines <(ls dir1) <(ls dir2)
+# 对比两个文件内容
+$ icdiff projects/{app1,app2}/settings.gradle
 ```
 ### 格式转换
 ```sh

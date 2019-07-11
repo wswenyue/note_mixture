@@ -40,3 +40,41 @@ $ sudo spctl --master-disable
 # 不显示"允许任何来源"
 $ sudo spctl --master-enable
 ```
+
+# osascript 使用
+```sh
+# 查看Finder的id(macOS中应用id唯一)
+$ osascript -e 'id of app "Finder"'
+# 关闭Finder
+$ osascript -e 'tell app "Finder" to quit'
+# 重启 Finder
+$ osascript -e 'tell app "Finder" to restart'
+# 让iTunes发送语音
+$ osascript -e 'tell app "iTunes" to next track' -e 'say "你好"'
+# 弹出系统选择dialog
+$ osascript -e 'tell app "System Events" to display dialog "Hello World"'
+# 使用通知中心发送弹出通知
+$ gem install terminal-notifier
+$ terminal-notifier -message "Hello, this is my message" -title "Message Title"
+# 发送通知中心弹出
+$ osascript -e 'display notification "Lorem ipsum dolor sit amet" with title "Title"'
+$ osascript -e 'display notification "通知内容" with title "标题" sound name "Sosumi"'
+
+# 删除指定文件到垃圾箱
+$ osascript -e "tell application \"Finder\" to delete POSIX file \"${PWD}/${dst}\""
+# 清空垃圾箱
+$ osascript -e "tell application \"Finder\" to empty the trash"
+```
+打开Terminal 登录ssh服务并执行一些指令
+```sh
+tell application "Terminal"
+   set currentTab to do script ("ssh user@server;")
+   delay 6
+   do script ("do something remote") in currentTab
+end tell
+```
+清除Mac系统给文件添加的扩展属性，一些文件或者软件一旦被加上某些属性后就无法使用和打开，需要使用该方式清空扩展属性后才能正常使用和打开。
+```sh
+# 遍历清除文件的扩展属性
+$ sudo xattr -cr /Applications/Sublime\ Text.app
+```
