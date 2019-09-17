@@ -7,6 +7,8 @@ $  git reflog origin/master --date=iso
 
 ### BFG 使用 - git历史修改者
 
+[bfg-repo-cleaner](https://github.com/rtyley/bfg-repo-cleaner)
+
 删除git历史中误提交的某个文件夹
 ```sh
 # 1.删除git历史中误提交的某个文件夹 eg：.gradle/*

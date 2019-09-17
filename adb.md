@@ -21,3 +21,13 @@ adb shell am broadcast -a actionStr --es test_key "this is test string" --ei tes
 ```sh
 $ adb shell am start -D -n "package/package.LaunchActivity"
 ```
+
+### 远程连接adb
+```sh
+# 设置手机监听5555端口
+$ adb tcpip 5555
+# 查看手机ip地址
+$ adb shell ifconfig
+# 连接手机ip:port
+$ adb connect phoneIp:5555
+```
