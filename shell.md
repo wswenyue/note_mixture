@@ -10,7 +10,7 @@
 
 ### xargs 使用
 > xargs能够处理管道或者stdin并将其转换成特定命令的命令参数
->
+
 ```bash
 #复制所有图片文件到 /data/images 目录下
 $ ls *.jpg | xargs -n1 -I cp {} /data/images
@@ -84,4 +84,8 @@ $ icdiff projects/{app1,app2}/settings.gradle
 ```sh
 # 将pdf转成png格式
 $ sips -s format png a.pdf --out img.png
+```
+### 图片文件信息查看
+```sh
+$ identify -verbose img.jpg
 ```
