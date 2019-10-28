@@ -5,6 +5,14 @@
 $  git reflog origin/master --date=iso 
 ```
 
+### git rev-parse 使用
+```sh
+# 获取HEAD指向的commit的SHA值（短）
+$ git rev-parse --short HEAD
+# 获取HEAD指向的分支名称
+$ git rev-parse --abbrev-ref HEAD
+```
+
 ### BFG 使用 - git历史修改者
 
 [bfg-repo-cleaner](https://github.com/rtyley/bfg-repo-cleaner)
