@@ -53,4 +53,6 @@ $ ffprobe -show_frames -select_streams v -of xml test.mp4 |grep "pict_type=\"I\"
 
 # useful links
 
-https://gist.github.com/protrolium/e0dbd4bb0f1a396fcb55
+[https://gist.github.com/protrolium/e0dbd4bb0f1a396fcb55](https://gist.github.com/protrolium/e0dbd4bb0f1a396fcb55)
+
+[FFmpeg 视频处理入门教程-阮一峰](https://mp.weixin.qq.com/s/1yCmRlaIbXUA_m60kP5gzQ)
