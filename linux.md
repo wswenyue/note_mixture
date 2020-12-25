@@ -118,6 +118,18 @@ $ top |grep --line-buffered -E "Networks|Disks" |tee Desktop/log.txt |grep --lin
 # 遍历搜索当前文件夹下面所有文件中包含text的行 -r：遍历所有子文件夹
 $ grep -r text ./
 ```
+### 日志过滤
+```sh
+# 过滤日志并输入到指定文件
+$ cat xxx.log | grep -E "tag1|tag2|tag3" > aaa.log
+# 反向排除
+$ grep -vE "tag1|tag2|tag3"
+# 显示匹配结果的前后3行【B：前三行；A：后三行】
+$ grep -E "tag1" -C 3
+
+# tee 同时输出到文件
+$ aklog -p "your_package_name" -f "tag" | tee ~/Desktop/tag.log 
+```
 
 ### diff 指令使用
 ```sh

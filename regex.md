@@ -337,3 +337,43 @@ HTML标记(包含内容或自闭合)
 \/(?!\*|span).+\/(?!span)[gim]*
 ```
 
+
+**匹配字符串中的表情标签**
+
+```regex
+# 表情标签：中括号包含的[1,5)个汉字
+
+(\[[\u4E00-\u9FA5]{1,5}?\])
+
+# eg:表情测试[weixiao]【哭】[微笑] 
+# 	识别结果: [微笑]
+```
+Test for C# Code
+
+```csharp
+string text = "表情测试[weixiao]【哭】[微笑]";
+Regex r = new Regex(@"(\[[\u4E00-\u9FA5]{1,5}?\])", RegexOptions.IgnoreCase);
+Match m = r.Match(text);
+int matchCount = 0;
+while (m.Success)
+{
+    Console.WriteLine("Match" + (++matchCount));
+    for (int i = 1; i <= 2; i++)
+    {
+        Group g = m.Groups[i];
+        Console.WriteLine("Group" + i + "='" + g + "'");
+        CaptureCollection cc = g.Captures;
+        for (int j = 0; j < cc.Count; j++)
+        {
+            Capture c = cc[j];
+            Console.WriteLine("Capture" + j + "='" + c + "', Position=" + c.Index);
+        }
+    }
+    m = m.NextMatch();
+}
+```
+
+### Links
+
+[正则表达式]: https://mp.weixin.qq.com/s/wkCHL_QzAJwWEg9JZaZnCQ
+

@@ -1,17 +1,47 @@
 # NDK 开发相关
 
+### javah使用---native接口头文件生成
+```sh
+# 编译之后，进入到对应class顶层包中,执行javah，会在当前目录下生成对应的头文件。
+$ javah com.wuba.thelight.TheLight
+# 如需依赖Android相关环境
+$ javah -classpath $ANDROID_PLATFORMS/android-22/android.jar:. com.wuba.thelight.TheLight
+```
+
+### javap使用---方法签名获取
+```sh
+# 编译之后，进入对应的class目录，执行。
+$ javap -s TheLight
+# eg:
+```
+
+> ```java
+>public class com.wuba.thelight.TheLight {
+>  	public com.wuba.thelight.TheLight();
+>    	descriptor: ()V
+>
+>  	public static native int handle(int, int);
+>    	descriptor: (II)I
+>
+>  	public static native java.lang.String call(java.lang.String);
+>    	descriptor: (Ljava/lang/String;)Ljava/lang/String;
+>}
+>```
+
+
 ### 使用addr2line定位出错位置
 
 工具位置ndk下`/toolchains/arm-linux-androideabi-4.9/prebuilt/darwin-x86_64/bin/`中的`arm-linux-androideabi-addr2line`
 
 使用方式：
-```sh
+​```sh
 $ addr2line -e so_path 汇编地址...
+
 ```
 
 eg: 例如分析下面一个错误信息日志
 
-```java
+​```java
 01-01 17:59:38.246: D/dalvikvm(20794): Late-enabling CheckJNI
 01-01 17:59:38.246: I/ActivityManager(1185): 
 Start proc com.example.hellojni for activity com.example.hellojni/.HelloJni: pid=20794 uid=10351 gids={50351, 1028, 1015}

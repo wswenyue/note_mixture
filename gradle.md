@@ -23,6 +23,9 @@ $ gradle dist --exclude-task test
 # 不管 up-to-date checks，强制执行所有task
 $ gradle test --rerun-tasks
 
+# 执行build和强制刷新下载依赖
+$ gradle build --refresh-dependencies
+
 # 列出所有的项目，子项目
 $ gradle projects
 
