@@ -77,4 +77,6 @@ end tell
 ```sh
 # 遍历清除文件的扩展属性
 $ sudo xattr -cr /Applications/Sublime\ Text.app
+# 添加验证
+$ xattr -d com.apple.quarantine chromedriver
 ```

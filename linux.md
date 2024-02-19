@@ -29,9 +29,18 @@ $ systemctl set-default graphical.target
 ### SSH-Keygen
 ```sh
 # 生成秘钥 -t:指定秘钥算法 -f:指定生成的秘钥文件名称（路径） -C:公钥添加备注信息,一般会添加邮箱地址
-$ ssh-keygen -t rsa -f test -C "test"
+# 算法: ed25519/rsa
+# 推荐选择ed25519，安全性更高。在如今大计算的使用下rsa安全性已经不够了
+$ ssh-keygen -t ed25519 -f test -C "test"
 eg
 $ ssh-keygen -t rsa -C "xxx@gmail.com"
+```
+
+### SSH 登录访问测试
+```
+$ ssh -T git@gitlab.example.com
+# 如没有反馈文案可使用
+$ ssh -Tvvv git@gitlab.example.com
 ```
 
 ### SSH Login
@@ -47,6 +56,8 @@ $ ssh -p 2200 root@127.0.0.1 -i .ssh/id_rsa
 ```sh
 # -P： 指定特别的端口是2200 而非默认端口22
 $ scp -P 2200  .ssh/id_rsa.pub root@127.0.0.1:/root/.ssh/host.pub
+# 拷贝远程windows桌面文件到当前目录
+$ scp administrator@169.254.15.40:/Users/Administrator/Desktop/Res.rar ./
 ```
 
 
@@ -150,4 +161,9 @@ $ sips -s format png a.pdf --out img.png
 ### 图片文件信息查看
 ```sh
 $ identify -verbose img.jpg
+```
+### nmap扫描
+```sh
+# 扫描192.168.199.1/24网段 22端口（ssh）开放的情况
+$ nmap -PS -p22 --open 192.168.199.1/24
 ```

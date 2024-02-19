@@ -29,3 +29,11 @@ $ nmcli radio wifi on
 $ export LANG=en_US.UTF-8
 $ export LANGUAGE=en
 ```
+
+```sh
+# 查看etc服务实时日志
+# 参数 -f 表示日志跟中
+$ journalctl -f -u etc.service
+# 列出所有服务
+$ systemctl list-units --type=service
+```
